@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom' 
-import 'whatwg-fetch';
+import 'whatwg-fetch'; // to make api requests to backend
 import HelloWorld from '../HelloWorld/HelloWorld';
 
 class Home extends Component {
@@ -8,29 +8,15 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      counters: []
+      sample: []
     };
 
-    //this.newCounter = this.newCounter.bind(this);
     this.loginHandler = this.loginHandler.bind(this);
   }
 
-  // newCounter() {
-  //   fetch('/api/counters', { method: 'POST' })
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       let data = this.state.counters;
-  //       data.push(json);
-
-  //       this.setState({
-  //         counters: data
-  //       });
-  //     });
-  // }
-
   loginHandler({history}){
     console.log(" loginHandler ");
-    history.push('/helloworld')
+    //history.push('/helloworld')
   }
 
   render() {
