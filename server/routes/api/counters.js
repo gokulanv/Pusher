@@ -1,6 +1,43 @@
-const Counter = require('../../models/Counter');
+const User = require('../../models/User');
 
 module.exports = (app) => {
+
+  app.get('/api/', (req, res) => {
+    res.send("api works");
+  })
+
+  app.post('/api/user', (req, res, next ) => {
+    const newUser = new User({
+      userId : req.body.userId,
+      role : req.body.role,
+      username : req.body.username,
+      password : req.body.password,
+      emailId : req.body.emailId,
+      institution : req.body.institution,
+      company : req.body.company,
+      phone : req.body.phone
+    });
+
+    User.addUser(newUser,(err,user) => {
+      console.log("adding user");
+      if(err){
+       console.log(err)
+       res.json({
+         success: false,
+         msg: 'Failed to register the user'
+       })
+      } 
+      else{
+       res.json({
+         success: true,
+         msg: 'User registered'
+       })  
+      }
+      
+    })
+  });
+
+
   app.get('/api/counters', (req, res, next) => {
     Counter.find()
       .exec()
