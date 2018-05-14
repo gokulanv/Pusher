@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route} from 'react-router-dom' 
 import 'whatwg-fetch'; // to make api requests to backend
 import HelloWorld from '../HelloWorld/HelloWorld';
+import { LANDING_PAGE } from "../../constants/routes";
 
 class Home extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class Home extends Component {
             <input type="password" id="password"></input>
           </div>
 
-        <button><Link to="/landing-page">Login</Link></button>
+        <button><Link to={LANDING_PAGE}>Login</Link></button>
       </>
     );
   }
