@@ -1,4 +1,5 @@
 const User = require('../../models/User');
+const PusherController = require('../../controllers/pusherController');
 
 module.exports = (app) => {
 
@@ -6,36 +7,7 @@ module.exports = (app) => {
     res.send("api works");
   })
 
-  app.post('/api/user', (req, res, next ) => {
-    const newUser = new User({
-      userId : req.body.userId,
-      role : req.body.role,
-      username : req.body.username,
-      password : req.body.password,
-      emailId : req.body.emailId,
-      institution : req.body.institution,
-      company : req.body.company,
-      phone : req.body.phone
-    });
-
-    User.addUser(newUser,(err,user) => {
-      console.log("adding user");
-      if(err){
-       console.log(err)
-       res.json({
-         success: false,
-         msg: 'Failed to register the user'
-       })
-      } 
-      else{
-       res.json({
-         success: true,
-         msg: 'User registered'
-       })  
-      }
-      
-    })
-  });
+  app.post('/api/user', PusherController.addUser);
 
 
   app.get('/api/counters', (req, res, next) => {

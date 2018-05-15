@@ -37,16 +37,16 @@ const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
 
-module.exports.findByUserId = ( userId, callback) => {
-    const query = { userId : userId };
-    User.findOne(query, callback);
-}
+// module.exports.findByUserId = ( userId, callback) => {
+//     const query = { userId : userId };
+//     User.findOne(query, callback);
+// }
 
-module.exports.findByUserName = ( username, callback) => {
-    const query = { username : username};
-    USer.findOne(query, callback);
-}
+// module.exports.findByUserName = ( username, callback) => {
+//     const query = { username : username};
+//     USer.findOne(query, callback);
+// }
 
-module.exports.addUser = (newUser, callback) => {
-    newUser.save(callback);
-}
+// module.exports.addUser = (newUser, callback) => {
+//     newUser.save(callback);
+// }
