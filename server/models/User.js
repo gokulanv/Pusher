@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
     company: {
         type: String
     },
-    phone:{
+    phone: {
         type: Number
     }
 

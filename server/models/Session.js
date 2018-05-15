@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema({
+const SessionSchema = mongoose.Schema({
   sessionId: {
     type: Number,
     required : true

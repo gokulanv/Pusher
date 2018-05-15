@@ -1,8 +1,6 @@
-
-
 module.exports.addUser = ( (newUser) => {
     console.log("adding user");
-    newUser.save()
+    return newUser.save()
     .then((result) => {
         return {
             success: true,

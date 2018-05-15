@@ -1,5 +1,5 @@
-const User = require('../../models/User');
-const PusherController = require('../../controllers/pusherController');
+const User = require('../models/User');
+const PusherController = require('../controllers/controllers');
 
 module.exports = (app) => {
 
@@ -23,6 +23,7 @@ module.exports = (app) => {
     counter.save()
       .then(() => res.json(counter))
       .catch((err) => next(err));
+      
   });
 
   app.delete('/api/counters/:id', function (req, res, next) {
